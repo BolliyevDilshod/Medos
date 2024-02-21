@@ -4,6 +4,7 @@ from .models import*
 
 admin.site.register(Hospitals),
 admin.site.register(Specialist),
-admin.site.register(Pharmacys)
+admin.site.register(Pharmacys),
+admin.site.register(Section)
 
 
