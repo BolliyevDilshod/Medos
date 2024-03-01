@@ -15,13 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
-
+from user.urls import register_router,user_router
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/v1/',include ('Api.urls')),
-    path('api-auth/',include('rest_framework.urls',)),
-    path('api/v1/dj-rest-auth/', include('dj_rest_auth.urls')),
-    path('api/v1/dj-rest-auth-registration/', include('dj_rest_auth.registration.urls')),
-    path('api/allauth/',include('allauth.urls')),
-    
+    path('admin/',admin.site.urls),
+    path('api/v1/',include('Api.urls')),
+    path('api/v1/auth/register/',include(register_router.urls)),
+    path('api/v1/',include(user_router.urls)),
 ]
